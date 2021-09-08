@@ -1,0 +1,41 @@
+body {
+    background-color: black;
+}
+
+header {
+    height: 30vh;
+    border: 1px solid blueviolet;
+    margin: 10em;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+header > button {
+    height: max-content;
+    padding: 1em;
+    border: 1px solid cadetblue;
+    background-color: black;
+    color: white;
+}
+
+header > button:hover {
+    cursor: pointer;
+}
+
+header > button:active {
+    background-color: cadetblue;
+}
+
+#button-groups {
+    display: flex;
+    justify-content: center;
+    gap: 1em;
+}
+
+#button-groups > button {
+    padding: 1em;
+    border-radius: 50%;
+    background-color: cadetblue;
+    color: white;
+}
