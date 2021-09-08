@@ -10,6 +10,7 @@ for(let i = 1; i <= 5; i++) {
     button.onclick = key;
     button_groups.appendChild(button);
     button.disabled = true;
+    button.style.background = "white";
     
     for(let j = 1; j <= i; j++) {
         mainKey.push(j);
@@ -19,9 +20,19 @@ for(let i = 1; i <= 5; i++) {
 
 function disabledButtons(boolean) {
     let buttons = button_groups.children;
-    for(let button of buttons) {
-        button.disabled = boolean;
+    if(boolean) {
+        for(let button of buttons) {
+            button.disabled = boolean;
+            button.style.background = "white";
+        }
     }
+    else{
+        for(let button of buttons) {
+            button.disabled = boolean;
+            button.style.background = "blueviolet";
+        }
+    }
+    
 }
 
 function key(e) {

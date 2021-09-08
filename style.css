@@ -36,6 +36,6 @@ header > button:active {
 #button-groups > button {
     padding: 1em;
     border-radius: 50%;
-    background-color: cadetblue;
+    /* background-color: cadetblue; */
     color: white;
 }
