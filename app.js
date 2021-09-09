@@ -5,17 +5,22 @@ const exhale = document.querySelector("#exhale");
 
 for(let i = 1; i <= 10; i++) {
     //create buttons
-    let button = document.createElement("button");
-    button.textContent = `${i}`;
-    button.onclick = key;
+    let button = createButton(i);
     button_groups.appendChild(button);
-    button.disabled = true;
-    button.style.background = "black";
     
     for(let j = 1; j <= i; j++) {
         mainKey.push(j);
     }
 
+}
+
+function createButton(i) {
+    let button = document.createElement("button");
+    button.textContent = `${i}`;
+    button.onclick = key;
+    button.disabled = true;
+    button.style.background = "black";
+    return button;
 }
 
 function disabledButtons(boolean) {
@@ -35,7 +40,7 @@ function disabledButtons(boolean) {
 function key(e) {
     let value = +e.target.innerHTML;
     disabledButtons(true);
-    inhale.disabled = false;
+    disableInNExhale(inhale, false);        
     
     if(mainKey.shift() == value){
         console.log("OK");
@@ -52,11 +57,22 @@ function key(e) {
 } 
 
 inhale.addEventListener("click", () => {
-    inhale.disabled = true;
-    exhale.disabled = false;
+    disableInNExhale(inhale, true);
+    disableInNExhale(exhale, false);
 })
 
 exhale.addEventListener("click", () => {
-    exhale.disabled = true; 
+    disableInNExhale(exhale, true);
     disabledButtons(false);
 })
+
+function disableInNExhale(button, boolean) {
+    if(boolean) {
+        button.disabled = boolean;
+        button.style.background = "black";
+    }
+    else {
+        button.disabled = boolean;
+        button.style.background = "cadetblue";
+    }
+}

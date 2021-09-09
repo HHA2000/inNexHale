@@ -23,7 +23,7 @@ header > button:hover {
     cursor: pointer;
 }
 
-header > button:active {
+header > #inhale {
     background-color: cadetblue;
 }
 
