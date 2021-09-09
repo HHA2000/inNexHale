@@ -3,14 +3,14 @@ const button_groups = document.querySelector("#button-groups");
 const inhale = document.querySelector("#inhale");
 const exhale = document.querySelector("#exhale");
 
-for(let i = 1; i <= 5; i++) {
+for(let i = 1; i <= 10; i++) {
     //create buttons
     let button = document.createElement("button");
     button.textContent = `${i}`;
     button.onclick = key;
     button_groups.appendChild(button);
     button.disabled = true;
-    button.style.background = "white";
+    button.style.background = "black";
     
     for(let j = 1; j <= i; j++) {
         mainKey.push(j);
@@ -20,19 +20,16 @@ for(let i = 1; i <= 5; i++) {
 
 function disabledButtons(boolean) {
     let buttons = button_groups.children;
-    if(boolean) {
-        for(let button of buttons) {
+    for(let button of buttons) {
+        if(boolean) {
             button.disabled = boolean;
-            button.style.background = "white";
+            button.style.background = "black";
         }
-    }
-    else{
-        for(let button of buttons) {
+        else {
             button.disabled = boolean;
             button.style.background = "blueviolet";
         }
     }
-    
 }
 
 function key(e) {
@@ -55,7 +52,6 @@ function key(e) {
 } 
 
 inhale.addEventListener("click", () => {
-    // alert("inhale");
     inhale.disabled = true;
     exhale.disabled = false;
 })

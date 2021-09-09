@@ -29,6 +29,7 @@ header > button:active {
 
 #button-groups {
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     gap: 1em;
 }
@@ -36,6 +37,6 @@ header > button:active {
 #button-groups > button {
     padding: 1em;
     border-radius: 50%;
-    /* background-color: cadetblue; */
+    border: 1px solid blueviolet;
     color: white;
 }
